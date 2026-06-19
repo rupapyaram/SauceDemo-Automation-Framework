@@ -1,83 +1,89 @@
-# SauceDemo Login Automation Framework
+# Selenium Automation Framework (Java + TestNG + POM)
 
-## 📌 Project Overview
+## Overview
+This is a Selenium WebDriver automation framework built using Java, TestNG, Maven, and Page Object Model (POM) design pattern.
 
-This project automates the **Login functionality of SauceDemo application** using Selenium WebDriver with Java, TestNG, Maven, and Page Object Model (POM) design pattern.
-
-It is built as a QA Automation learning and portfolio project to demonstrate automation testing skills.
-
----
-
-## Test Scenarios Covered
-
-1. Valid Login Test
-2. Invalid Login Test
-3. Locked User Login Test
+It automates login functionality of the SauceDemo application and demonstrates a scalable automation framework with reporting, utilities, and configuration management.
 
 ---
 
-## Framework Design
-
-The framework follows **Page Object Model (POM)** approach:
-
-* **pages package** → Contains UI locators and reusable methods
-* **tests package** → Contains TestNG test cases
-
-This helps in better code reusability and maintainability.
+## Tech Stack
+Java, Selenium WebDriver, TestNG, Maven, POM, Extent Reports
 
 ---
 
-## Technologies Used
+## Framework Structure
+src/test/java  
+- base (BaseTest - browser setup & teardown)  
+- pages (Page Object classes)  
+- tests (TestNG test cases)  
+- listeners (TestNG listeners for reporting & screenshots)  
+- utils (ConfigReader, Screenshot utility)
 
-* Java
-* Selenium WebDriver
-* TestNG
-* Maven
-* Eclipse IDE
-
----
-
-## Project Structure
-
-```
-src
- └── test
-      └── java
-           ├── pages
-           │     └── LoginPage.java
-           └── tests
-                 └── LoginTest.java
-
-pom.xml
-README.md
-```
+src/test/resources  
+- config.properties (test data & environment config)
 
 ---
 
-## How to Run the Project
-
-1. Clone the repository
-2. Import project into Eclipse as Maven Project
-3. Run `pom.xml` to download dependencies
-4. Run `LoginTest.java` as TestNG Test
-
----
-
-## Framework Features
-
-* Page Object Model (POM)
-* TestNG annotations (@Test, @BeforeMethod, @AfterMethod)
-* Maven dependency management
-* Reusable login method
-* Assertion-based validation
+## Features
+- Page Object Model (POM)
+- BaseTest for WebDriver management
+- Config-driven test data
+- TestNG Listener integration
+- Screenshot capture on failure
+- Extent HTML reporting
+- Reusable utilities
 
 ---
 
-## 🎯 Purpose of Project
+## Test Scenarios
+- Valid login test  
+- Invalid login test  
+- Locked user login test  
 
-This project was created to:
+---
 
-* Learn Selenium Automation Testing
-* Understand TestNG framework
-* Practice POM design pattern
-* Build QA Automation portfolio for job applications
+## Reports
+Extent Report generated at:
+test-output/ExtentReport.html
+
+Includes:
+- Pass / Fail / Skip status
+- Execution summary
+- Screenshots for failed tests
+
+---
+
+## Screenshots
+Saved at:
+/screenshots
+
+---
+
+## Configuration
+config.properties contains:
+
+url=https://www.saucedemo.com/  
+valid_username=standard_user  
+valid_password=secret_sauce  
+invalid_username=wrong_user  
+invalid_password=wrong_password  
+locked_username=locked_out_user  
+locked_password=secret_sauce  
+
+---
+
+## How to Run
+1. Clone repo
+2. Import as Maven project in Eclipse/IntelliJ
+3. Run LoginTest or testng.xml
+
+---
+
+## Author
+Rupa Pyaram
+
+---
+
+## Notes
+This framework demonstrates real-world automation concepts like POM, configuration management, reporting, and reusable design.
